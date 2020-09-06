@@ -59,8 +59,10 @@ public class ServerHandshakeNetworkHandlerMixin {
                             packet.address = split[0];
                             connection.address = new java.net.InetSocketAddress(split[1], ((java.net.InetSocketAddress) connection.getAddress()).getPort());
                             ((BungeeConnectionExtra) connection).setSpoofedUUID(UUIDTypeAdapter.fromString(split[2]));
-                        } else {
-                            LiteralText disconnectText = new LiteralText("If you wish to use IP forwarding, please enable it in your BungeeCord config as well!");
+                        } else if(split.length == 1){
+                            System.out.println("Oh no.");
+                        } else{
+                            LiteralText disconnectText = new LiteralText("Spigot go BRrrr");
                             this.connection.send(new DisconnectS2CPacket(disconnectText));
                             this.connection.disconnect(disconnectText);
                             return;
