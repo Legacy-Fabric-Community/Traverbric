@@ -1,29 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "traverbric",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Traverbric",
+  "description": "Traverbric support for 1.8.9 fabric",
   "authors": [
-    "Me!"
+    "hydos"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "LGPLv3",
+  "icon": "assets/traverbric/icon.png",
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "server": [
+      "io.github.hydos.traverbric.TraverBric"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "traverbric.mixins.json"
   ],
 
   "depends": {
