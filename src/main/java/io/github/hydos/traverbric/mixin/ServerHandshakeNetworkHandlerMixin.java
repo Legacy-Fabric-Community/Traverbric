@@ -59,9 +59,9 @@ public class ServerHandshakeNetworkHandlerMixin {
                             packet.address = split[0];
                             connection.address = new java.net.InetSocketAddress(split[1], ((java.net.InetSocketAddress) connection.getAddress()).getPort());
                             ((BungeeConnectionExtra) connection).setSpoofedUUID(UUIDTypeAdapter.fromString(split[2]));
-                        } else if(split.length == 1){
+                        } else if (split.length == 1) {
                             System.out.println("Oh no.");
-                        } else{
+                        } else {
                             LiteralText disconnectText = new LiteralText("Spigot go BRrrr");
                             this.connection.send(new DisconnectS2CPacket(disconnectText));
                             this.connection.disconnect(disconnectText);
